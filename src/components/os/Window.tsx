@@ -77,7 +77,7 @@ export default function Window({
         top: win.maximized ? 10 : win.y,
         width,
         height,
-        zIndex: win.z,
+        zIndex: win.z + 20,
       }}
       role="dialog"
       aria-modal="false"
@@ -92,7 +92,7 @@ export default function Window({
       )}
 
       <div
-        className={`flex h-10 shrink-0 items-center gap-2 border-b border-white/10 px-3 ${
+        className={`flex h-10 shrink-0 items-center gap-2 border-b border-white/10 pl-3 pr-1.5 ${
           win.maximized ? 'cursor-default' : 'cursor-grab active:cursor-grabbing'
         }`}
         onPointerDown={handlePointerDown}
@@ -102,50 +102,56 @@ export default function Window({
         onDoubleClick={handleDoubleClick}
         style={{ touchAction: 'none' }}
       >
-        <div className="flex shrink-0 items-center gap-1.5">
-          <button
-            type="button"
-            onClick={() => onClose(win.id)}
-            aria-label={`Cerrar ${app.title}`}
-            title="Cerrar"
-            className="group grid h-6 w-6 place-items-center rounded-md transition hover:bg-danger/10"
-          >
-            <span className="grid h-3.5 w-3.5 place-items-center rounded-[3px] border border-white/20 transition group-hover:border-danger/70 group-hover:bg-danger/20">
-              <span className="h-1.5 w-1.5 rotate-45 border border-white/45 transition group-hover:border-danger" />
-            </span>
-          </button>
-          <button
-            type="button"
-            onClick={() => onMinimize(win.id)}
-            aria-label={`Minimizar ${app.title}`}
-            title="Minimizar"
-            className="group grid h-6 w-6 place-items-center rounded-md transition hover:bg-warn/10"
-          >
-            <span className="grid h-3.5 w-3.5 place-items-center rounded-[3px] border border-white/20 transition group-hover:border-warn/70 group-hover:bg-warn/20">
-              <span className="h-px w-1.5 bg-white/45 transition group-hover:bg-warn" />
-            </span>
-          </button>
-          <button
-            type="button"
-            onClick={() => onMaximize(win.id)}
-            aria-label={`${win.maximized ? 'Restaurar' : 'Maximizar'} ${app.title}`}
-            title={win.maximized ? 'Restaurar' : 'Maximizar'}
-            className="group grid h-6 w-6 place-items-center rounded-md transition hover:bg-ok/10"
-          >
-            <span className="grid h-3.5 w-3.5 place-items-center rounded-[3px] border border-white/20 transition group-hover:border-ok/70 group-hover:bg-ok/20">
-              <span className="h-1.5 w-1.5 border border-white/45 transition group-hover:border-ok" />
-            </span>
-          </button>
-        </div>
-
-        <div className="pointer-events-none flex min-w-0 flex-1 items-center justify-center gap-2">
+        <div className="pointer-events-none flex min-w-0 flex-1 items-center gap-2">
           <Icon name={app.icon} size={13} className="shrink-0 text-dim" />
           <span className="truncate font-mono text-[10px] uppercase tracking-[0.14em] text-dim">
             {app.title}
           </span>
         </div>
 
-        <span className="w-[84px] shrink-0" aria-hidden="true" />
+        <div className="flex shrink-0 items-center gap-0.5">
+          <button
+            type="button"
+            onClick={() => onMinimize(win.id)}
+            aria-label={`Minimizar ${app.title}`}
+            title="Minimizar"
+            className="grid h-6 w-6 place-items-center rounded-md text-dim transition hover:bg-warn/10 hover:text-warn"
+          >
+            <span className="h-px w-2.5 bg-current" />
+          </button>
+          <button
+            type="button"
+            onClick={() => onMaximize(win.id)}
+            aria-label={`${win.maximized ? 'Restaurar' : 'Maximizar'} ${app.title}`}
+            title={win.maximized ? 'Restaurar' : 'Maximizar'}
+            className="grid h-6 w-6 place-items-center rounded-md text-dim transition hover:bg-ok/10 hover:text-ok"
+          >
+            {win.maximized ? (
+              <span className="relative h-2.5 w-2.5">
+                <span className="absolute left-0 top-0 h-2 w-2 border border-current" />
+                <span className="absolute bottom-0 right-0 h-2 w-2 border border-current bg-[#080b12]" />
+              </span>
+            ) : (
+              <span className="h-2 w-2 border border-current" />
+            )}
+          </button>
+          <button
+            type="button"
+            onClick={() => onClose(win.id)}
+            aria-label={`Cerrar ${app.title}`}
+            title="Cerrar"
+            className="grid h-6 w-6 place-items-center rounded-md text-dim transition hover:bg-danger/10 hover:text-danger"
+          >
+            <svg viewBox="0 0 12 12" className="h-3 w-3" fill="none" aria-hidden="true">
+              <path
+                d="M2.5 2.5l7 7M9.5 2.5l-7 7"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div className="os-scroll min-h-0 flex-1 overflow-y-auto">{children}</div>

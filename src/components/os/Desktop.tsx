@@ -256,7 +256,7 @@ export default function Desktop() {
         <div className="hidden min-h-0 flex-1 flex-col md:flex">
           <MenuBar now={now} onOpen={openApp} onOpenPalette={() => setPaletteOpen(true)} />
 
-          <div ref={workspaceRef} className="relative min-h-0 flex-1 overflow-hidden">
+          <div ref={workspaceRef} className="relative isolate min-h-0 flex-1 overflow-hidden">
             <DesktopIcons openIds={openIds} activeId={activeId} onOpen={openApp} />
             <DesktopWidgets onOpen={openApp} />
 
