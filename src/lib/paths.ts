@@ -6,7 +6,7 @@ export function withBase(path = '/'): string {
   return `${base}/${clean}`;
 }
 
-export const SITE_URL = 'https://matias-spacech.github.io';
+export const SITE_URL = 'https://matiasspacech.github.io';
 
 export function absoluteUrl(path = '/'): string {
   return new URL(withBase(path), SITE_URL).toString();

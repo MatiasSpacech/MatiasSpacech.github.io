@@ -2,7 +2,7 @@
 
 Portfolio de **Matias Spacech** empaquetado como un sistema operativo: escritorio, ventanas, dock, terminal y una versión simple para leer sin distracciones.
 
-- **Sitio:** https://matias-spacech.github.io/
+- **Sitio:** https://matiasspacech.github.io/
 - **Repo:** https://github.com/MatiasSpacech/MatiasSpacech.github.io
 - **Stack:** Astro 7, React 19, TypeScript, Tailwind CSS 4, GitHub Pages.
 
@@ -72,7 +72,7 @@ El workflow `.github/workflows/deploy.yml` publica en cada push a `main`.
 
 1. Settings → Pages → **Source: GitHub Actions**.
 2. Settings → Pages → **Enforce HTTPS**.
-3. El sitio se publica en `https://matias-spacech.github.io/`.
+3. El sitio se publica en `https://matiasspacech.github.io/`.
 
 El repo es un **user site**: se llama `MatiasSpacech.github.io` y no usa `basePath`. Si algún día se renombra a `portfolio`, hay que agregar `base: '/portfolio'` en `astro.config.mjs` y prefijar todos los links con `withBase()` (ya está preparado en `src/lib/paths.ts`).
 

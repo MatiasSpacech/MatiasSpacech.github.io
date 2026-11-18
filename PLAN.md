@@ -17,7 +17,7 @@
 | **Objetivo secundario** | Que un dev o cliente se quede explorando y recuerde el sitio |
 | **Stack recomendado** | Astro (última estable) + islas de React + TypeScript + Tailwind CSS 4 + Motion + MDX |
 | **Deploy** | GitHub Pages (estático) vía GitHub Actions |
-| **URL provisoria** | `https://matias-spacech.github.io/` — repo `MatiasSpacech.github.io` (opción A, elegida) |
+| **URL provisoria** | `https://matiasspacech.github.io/` — repo `MatiasSpacech.github.io` (opción A, elegida) |
 | **Dominio futuro** | `spacech.dev` (alternativas: `spacechos.com`, `matias.space`); migración opcional |
 
 **North star:** impacto visual sin sacrificar claridad. El sistema operativo es la envoltura; el contenido y la contratación son el producto.
@@ -508,9 +508,9 @@ astro.config.mjs
 
 **URL: escenario elegido**
 
-> **Decisión: opción A.** El repo se llama `MatiasSpacech.github.io` y el sitio se publica en `https://matias-spacech.github.io/`, sin subcarpeta ni `base`.
+> **Decisión: opción A.** El repo se llama `MatiasSpacech.github.io` y el sitio se publica en `https://matiasspacech.github.io/`, sin subcarpeta ni `base`.
 
-**A. Repo `MatiasSpacech.github.io` (elegido).** GitHub publica en `https://matias-spacech.github.io/`, sin subcarpeta. No hay `base` que configurar y migrar a un dominio propio después es más simple. El nombre del repo coincide con el usuario (`MatiasSpacech`).
+**A. Repo `MatiasSpacech.github.io` (elegido).** GitHub publica en `https://matiasspacech.github.io/`, sin subcarpeta. No hay `base` que configurar y migrar a un dominio propio después es más simple. El nombre del repo coincide con el usuario (`MatiasSpacech`).
 
 **B. Repo `portfolio` (solo si preferís otro nombre).** El sitio quedaría en `https://<usuario>.github.io/portfolio/`; requiere `base: '/portfolio'` y prefijar todos los links internos.
 
@@ -524,7 +524,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://matias-spacech.github.io',
+  site: 'https://matiasspacech.github.io',
   output: 'static',
   trailingSlash: 'always',
   integrations: [react(), mdx(), sitemap()],

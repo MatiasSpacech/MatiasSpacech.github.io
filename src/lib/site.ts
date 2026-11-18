@@ -7,7 +7,7 @@ export const site = {
   availability: 'Disponible para trabajar',
   github: 'https://github.com/MatiasSpacech',
   githubHandle: '@MatiasSpacech',
-  url: 'https://matias-spacech.github.io',
+  url: 'https://matiasspacech.github.io',
   avatar: '/avatar.jpg',
   // Completar cuando esté definido. Mientras tanto, el canal principal es GitHub.
   email: '',

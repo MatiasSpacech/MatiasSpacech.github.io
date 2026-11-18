@@ -62,7 +62,7 @@ const svg = `
     <text x="24" y="238" fill="#93A0B8" font-family="monospace" font-size="10">github.com/MatiasSpacech</text>
   </g>
 
-  <text x="82" y="574" fill="#93A0B8" font-family="monospace" font-size="13" letter-spacing="2">MATIAS-SPACECH.GITHUB.IO</text>
+  <text x="82" y="574" fill="#93A0B8" font-family="monospace" font-size="13" letter-spacing="2">MATIASSPACECH.GITHUB.IO</text>
   <text x="1118" y="574" fill="#93A0B8" font-family="monospace" font-size="13" text-anchor="end" letter-spacing="2">SPACECH.OS</text>
 </svg>
 `;

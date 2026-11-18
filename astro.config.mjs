@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 // El sitio vive en la raíz del user site de GitHub Pages.
 // Si algún día se mueve a un project site, agregar base: '/repo'.
 export default defineConfig({
-  site: 'https://matias-spacech.github.io',
+  site: 'https://matiasspacech.github.io',
   trailingSlash: 'always',
   integrations: [react(), mdx(), sitemap()],
   vite: {
