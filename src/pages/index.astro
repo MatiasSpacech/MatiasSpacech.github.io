@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import Desktop from '../components/os/Desktop';
+---
+
+<Base>
+  <Desktop client:load />
+
+  <noscript>
+    <div
+      class="fixed inset-x-4 bottom-4 z-[200] rounded-2xl border border-white/15 bg-[#0b0f17]/95 p-4 text-sm text-ink shadow-2xl backdrop-blur-xl"
+    >
+      <p class="font-medium">SPACECH.OS necesita JavaScript para funcionar.</p>
+      <p class="mt-1 text-dim">
+        Podés ver todo el contenido en la
+        <a class="text-aqua underline underline-offset-4" href="/simple/">versión simple</a>
+        o en el
+        <a class="text-aqua underline underline-offset-4" href="https://github.com/MatiasSpacech" rel="noreferrer">GitHub de Matias</a>.
+      </p>
+    </div>
+  </noscript>
+</Base>

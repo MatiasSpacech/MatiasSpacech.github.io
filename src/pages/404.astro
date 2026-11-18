@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/paths';
+---
+
+<Base title="404 — Ruta no encontrada" description="La ruta que buscás no existe. Reiniciá el sistema y volvé al escritorio.">
+  <main class="grid min-h-dvh place-items-center bg-[#0b1f6b] px-5 py-12 font-mono text-[#dfe8ff]">
+    <div class="w-full max-w-2xl">
+      <div class="mb-8 flex items-center gap-3">
+        <span class="grid h-10 w-10 place-items-center bg-[#dfe8ff] font-sans text-xl font-bold text-[#0b1f6b]">▲</span>
+        <div>
+          <p class="text-sm font-bold tracking-wide">SPACECH.OS</p>
+          <p class="text-xs text-[#9fb6ff]">v2.6 “Tandil”</p>
+        </div>
+      </div>
+
+      <p class="text-sm text-[#9fb6ff]">Se detectó un problema y el sistema se detuvo para evitar daños mayores.</p>
+      <h1 class="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">KERNEL_PANIC</h1>
+      <p class="mt-2 text-sm">STOP: 0x00000000 (0xSPACECH_OS)</p>
+
+      <div class="mt-8 border border-[#dfe8ff]/25 bg-[#061241]/60 p-5 text-sm leading-relaxed">
+        <p><span class="text-[#9fb6ff]">&gt;</span> cd /ruta-que-buscabas</p>
+        <p class="mt-1"><span class="text-[#ff8b8b]">bash:</span> cd: no such file or directory</p>
+        <p class="mt-1"><span class="text-[#9fb6ff]">&gt;</span> sudo reiniciar --volver-al-escritorio</p>
+        <p class="mt-1 text-[#8ef0b8]">[ OK ] El próximo proyecto sí existe.</p>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href={withBase('/')}
+          class="bg-[#dfe8ff] px-5 py-3 text-sm font-bold text-[#0b1f6b] transition hover:bg-white"
+        >
+          Reiniciar sistema
+        </a>
+        <a
+          href={withBase('/simple/')}
+          class="border border-[#dfe8ff]/30 px-5 py-3 text-sm font-medium transition hover:bg-[#dfe8ff]/10"
+        >
+          Ver versión simple
+        </a>
+      </div>
+    </div>
+  </main>
+</Base>
